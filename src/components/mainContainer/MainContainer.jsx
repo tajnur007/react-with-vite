@@ -1,3 +1,4 @@
+import LoginForm from '../login-form/LoginForm';
 import Card from './Card';
 import './MainContainer.css';
 
@@ -12,11 +13,13 @@ const MainContainer = () => {
 
   return (
     <main>
-      <div className="card-container">
+      {/* <div className="card-container">
         {cards.map((card) => (
           <Card key={card.id} data={card} />
         ))}
-      </div>
+      </div> */}
+
+      <LoginForm />
     </main>
   )
 }
