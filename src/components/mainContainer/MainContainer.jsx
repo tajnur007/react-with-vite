@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useId, useState } from 'react';
 import LoginForm from '../login-form/LoginForm';
 import LoginForm2 from '../login-form/LoginForm2';
 import Card from './Card';
@@ -10,7 +10,7 @@ const MainContainer = () => {
     { id: 1, text: 'dkfksadbucizk cxhijawdc cnjzh' },
     { id: 2, text: 'dkfksadbucizk cxhijawdc cnjzh' },
     { id: 3, text: 'dkfksadbucizk cxhijawdc cnjzh' },
-    { id: 4, text: 'dkfksadbucizk cxhijawdc cnjzh' },
+    { id: 2, text: 'dkfksadbucizk cxhijawdc cnjzh' },
     { id: 5, text: 'dkfksadbucizk cxhijawdc cnjzh' },
   ]);
 
@@ -44,8 +44,8 @@ const MainContainer = () => {
   return (
     <main>
       <div className="card-container">
-        {cards.map((card) => (
-          <Card key={card.id} data={card} />
+        {cards.map((card, idx) => (
+          <Card key={idx} data={card} />
         ))}
       </div>
 

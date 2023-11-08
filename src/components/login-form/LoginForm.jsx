@@ -1,11 +1,21 @@
-import { useState } from 'react';
+import { useContext, useId, useState } from 'react';
 import './LoginForm.css';
+import { PropertyContext } from '../ContextSolution';
 
-const LoginForm = () => {
+const LoginForm = (props) => {
+  const { isComingFromProvider } = props;
+  const pProps = useContext(PropertyContext);
+
+  if (isComingFromProvider) {
+    return (<>Provider Property: {'pProps'}</>);
+  }
 
   const [value, setValue] = useState(0);
   const [isShowPassword, setIsShowPassword] = useState(true);
   const [userInfo, setUserInfo] = useState({});
+
+  const usernameId = useId();
+  const passwordId = useId();
 
   const handleInputChange = (key, value) => {
     console.log(key, value);
@@ -35,14 +45,14 @@ const LoginForm = () => {
       <form onSubmit={handleFormSubmit}>
         {/* Username Input  */}
         <div>
-          <span>Username:</span>
-          <input className='form-input' type="text" onBlur={(e) => handleInputChange('username', e.target.value)} />
+          <label htmlFor={usernameId}>Username:</label>
+          <input id={usernameId} className='form-input' type="text" onBlur={(e) => handleInputChange('username', e.target.value)} />
         </div>
 
         {/* Password Input  */}
         <div>
-          <span>Password:</span>
-          <input className='form-input' type={isShowPassword ? 'text' : 'password'} onBlur={(e) => handleInputChange('password', e.target.value)} />
+          <label htmlFor={passwordId}>Password:</label>
+          <input id={passwordId} className='form-input' type={isShowPassword ? 'text' : 'password'} onBlur={(e) => handleInputChange('password', e.target.value)} />
           <button className='' onClick={togglePassVisibility}>eye</button>
         </div>
 
