@@ -5,16 +5,15 @@ const LoginForm = () => {
 
   const [value, setValue] = useState(0);
   const [isShowPassword, setIsShowPassword] = useState(true);
-  const [userInfo, setUserInfo] = useState({
-    username: '',
-    password: ''
-  });
+  const [userInfo, setUserInfo] = useState({});
 
-  const handleInputChange = (event, fieldName) => {
+  const handleInputChange = (key, value) => {
+    console.log(key, value);
     setUserInfo({
       ...userInfo,
-      [fieldName]: event.target.value
+      [key]: value
     });
+    // console.log(userInfo)
   }
 
   const togglePassVisibility = () => {
@@ -23,6 +22,10 @@ const LoginForm = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+    fetch('www.google.com', {
+      method: 'POST',
+      body: JSON.stringify(userInfo)
+    });
     setValue(value + 5);
   }
 
@@ -33,13 +36,13 @@ const LoginForm = () => {
         {/* Username Input  */}
         <div>
           <span>Username:</span>
-          <input className='form-input' type="text" onChange={(e) => handleInputChange(e, 'username')} />
+          <input className='form-input' type="text" onBlur={(e) => handleInputChange('username', e.target.value)} />
         </div>
 
         {/* Password Input  */}
         <div>
           <span>Password:</span>
-          <input className='form-input' type={isShowPassword ? 'text' : 'password'} onChange={(e) => handleInputChange(e, 'password')} />
+          <input className='form-input' type={isShowPassword ? 'text' : 'password'} onBlur={(e) => handleInputChange('password', e.target.value)} />
           <button className='' onClick={togglePassVisibility}>eye</button>
         </div>
 
