@@ -6,6 +6,8 @@ import ContextProblem from "../components/ContextProblem";
 import ContextSolution from "../components/ContextSolution";
 import MemoProblem from "../components/use-memo/MemoProblem";
 import CustomHook from "../components/CustomHook";
+import ReducerProblem from "../components/use-reducer/ReducerProblem";
+import ReducerSolution from "../components/use-reducer/ReducerSolution";
 
 
 const Home = () => {
@@ -15,8 +17,10 @@ const Home = () => {
       {/* <MainContainer /> */}
       {/* <ContextProblem /> */}
       {/* <ContextSolution /> */}
-      <MemoProblem />
+      {/* <MemoProblem /> */}
       {/* <CustomHook /> */}
+      {/* <ReducerProblem /> */}
+      <ReducerSolution />
       <Footer />
     </Fragment>
   );
