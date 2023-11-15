@@ -1,15 +1,16 @@
+import CustomHook from "../components/CustomHook";
 import Footer from "../components/footer/Footer";
 import Navbar from "../components/navbar/Navbar";
 
 
-const About = () => {
+const Hook = () => {
   return (
     <div>
       <Navbar />
-      <p>This is about page</p>
+      <CustomHook />
       <Footer />
     </div>
   )
 }
 
-export default About;
+export default Hook;

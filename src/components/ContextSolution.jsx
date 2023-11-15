@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
 import LoginForm from "./login-form/LoginForm";
-import { ThemeContext } from "../App";
+import { ThemeContext } from "../ThemeProvider";
 
 export const PropertyContext = createContext();
 

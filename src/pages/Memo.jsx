@@ -1,15 +1,16 @@
 import Footer from "../components/footer/Footer";
 import Navbar from "../components/navbar/Navbar";
+import MemoProblem from "../components/use-memo/MemoProblem";
 
 
-const About = () => {
+const Memo = () => {
   return (
     <div>
       <Navbar />
-      <p>This is about page</p>
+      <MemoProblem />
       <Footer />
     </div>
   )
 }
 
-export default About;
+export default Memo;

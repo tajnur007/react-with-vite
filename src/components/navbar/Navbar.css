@@ -16,3 +16,24 @@ nav {
   background-color: lightblue;
   cursor: pointer;
 }
+
+nav > ul {
+  list-style: none;
+}
+
+nav > ul > li {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all linear;
+  height: 63px;
+}
+
+nav > ul > li:hover {
+  background-color: lightgray;
+}
+
+nav > ul > li > a {
+  padding: 0px 15px;
+}

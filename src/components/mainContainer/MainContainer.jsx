@@ -4,7 +4,7 @@ import LoginForm2 from '../login-form/LoginForm2';
 import Card from './Card';
 import './MainContainer.css';
 
-const MainContainer = () => {
+const MainContainer = (props) => {
   const [keyword, setKeyword] = useState('');
   const [cards, setCards] = useState([
     { id: 1, text: 'dkfksadbucizk cxhijawdc cnjzh' },
@@ -43,6 +43,7 @@ const MainContainer = () => {
 
   return (
     <main>
+      {props.children}
       <div className="card-container">
         {cards.map((card, idx) => (
           <Card key={idx} data={card} />

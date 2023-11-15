@@ -3,16 +3,14 @@ import Home from './pages/Home'
 
 export const ThemeContext = createContext();
 
-function App() {
+function ThemeProvider(props) {
   const [theme, setTheme] = useState('light');
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <Fragment>
-        <Home />
-      </Fragment>
+      {props.children}
     </ThemeContext.Provider>
   )
 }
 
-export default App
+export default ThemeProvider;

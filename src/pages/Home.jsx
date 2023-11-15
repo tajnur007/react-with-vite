@@ -14,13 +14,16 @@ const Home = () => {
   return (
     <Fragment>
       <Navbar />
-      {/* <MainContainer /> */}
+      <MainContainer>
+        <div>Hello World!</div>
+        <p>This is a paragraph</p>
+      </MainContainer>
       {/* <ContextProblem /> */}
       {/* <ContextSolution /> */}
       {/* <MemoProblem /> */}
       {/* <CustomHook /> */}
       {/* <ReducerProblem /> */}
-      <ReducerSolution />
+      {/* <ReducerSolution /> */}
       <Footer />
     </Fragment>
   );
