@@ -17,4 +17,13 @@ main {
   border-radius: 5px;
   background-color: white;
   min-height: 130px;
+  cursor: pointer;
+}
+
+.complete {
+  background-color: lightgreen;
+}
+
+.incomplete {
+  background-color: lightpink;
 }

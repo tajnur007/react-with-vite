@@ -21,12 +21,13 @@ const Navbar = () => {
       <div className="">K.T.I Lab</div>
       {/* <button onClick={changeTheme}>{theme}</button> */}
       <ul>
-        <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/about'>About</NavLink></li>
-        <li><NavLink to='/memo'>Memo</NavLink></li>
-        <li><NavLink to='/reducer'>Reducer</NavLink></li>
-        <li><NavLink to='/context'>Context</NavLink></li>
-        <li><NavLink to='/hook'>Hook</NavLink></li>
+        <NavLink to='/'><li>Home</li></NavLink>
+        <NavLink to='/about'><li>About</li></NavLink>
+        <NavLink to='/memo'><li>Memo</li></NavLink>
+        <NavLink to='/reducer'><li>Reducer</li></NavLink>
+        <NavLink to='/context'><li>Context</li></NavLink>
+        <NavLink to='/hook'><li>Hook</li></NavLink>
+        <NavLink to='/todos'><li>Todos</li></NavLink>
       </ul>
       <LoginLogout
         isUserLoggedIn={isUserLoggedIn}

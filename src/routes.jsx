@@ -5,11 +5,18 @@ import Context from './pages/Context.jsx';
 import Hook from './pages/Hook.jsx';
 import Memo from './pages/Memo.jsx';
 import Reducer from './pages/Reducer.jsx';
+import Todos from "./pages/Todos.jsx";
+import DynamicTodo from "./pages/DynamicTodo.jsx";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />
+    element: <Home />,
+    children: [
+      {
+
+      }
+    ]
   },
   {
     path: "/about",
@@ -30,5 +37,39 @@ export const router = createBrowserRouter([
   {
     path: "/reducer",
     element: <Reducer />
+  },
+  {
+    path: "/todos",
+    element: <Todos />
+  },
+  {
+    path: "/todos/:todoId",
+    element: <DynamicTodo />
+  },
+  {
+    path: "/men",
+    element: <Todos />,
+    children: [
+      {
+        path: "shirt",
+        element: <Hook />
+      },
+      {
+        path: "pant",
+        element: <Context />
+      },
+    ]
+  },
+  {
+    path: "/men/shirt/:productId",
+    element: <DynamicTodo />
+  },
+  {
+    path: "/men/pant/:productId",
+    element: <DynamicTodo />
+  },
+  {
+    path: "/female/sharee/:productId",
+    element: <DynamicTodo />
   },
 ]);
