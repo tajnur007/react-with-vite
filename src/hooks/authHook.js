@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState } from "react";
+import { setUserDetials } from '../utils/Helpers'
 
 const myUser = {
   name: 'Tajnur',
@@ -17,6 +18,7 @@ export const useAuthSession = () => {
       setUser(null);
     } else {
       setStaus('authorized');
+      setUserDetials(myUser);
       setUser(myUser);
     }
   }, 3000);

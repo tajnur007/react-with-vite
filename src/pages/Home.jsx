@@ -8,9 +8,13 @@ import MemoProblem from "../components/use-memo/MemoProblem";
 import CustomHook from "../components/CustomHook";
 import ReducerProblem from "../components/use-reducer/ReducerProblem";
 import ReducerSolution from "../components/use-reducer/ReducerSolution";
+import { getUserDetails } from "../utils/Helpers";
 
 
 const Home = () => {
+  const userData = getUserDetails();
+  console.log(userData);
+
   return (
     <Fragment>
       <Navbar />
