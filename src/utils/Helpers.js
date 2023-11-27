@@ -5,6 +5,7 @@ export const setUserDetials = (userData) => {
   sessionStorage.setItem(LOCAL_STORAGE_KEYS.USER_DETAILS, JSON.stringify(userData));
 }
 
+// ? This method will provide you the user details
 export const getUserDetails = () => {
   let localUserDetails = localStorage.getItem(LOCAL_STORAGE_KEYS.USER_DETAILS);
   let sessionUserDetails = localStorage.getItem(LOCAL_STORAGE_KEYS.USER_DETAILS);

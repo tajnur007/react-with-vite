@@ -1,6 +1,8 @@
 import { createContext, useContext } from "react";
 import LoginForm from "./login-form/LoginForm";
 import { ThemeContext } from "../ThemeProvider";
+import Card from "./mainContainer/Card";
+
 
 export const PropertyContext = createContext();
 
@@ -18,6 +20,7 @@ const ContextSolution = () => {
       myObj: obj,
       myfunc: func,
     }}>
+      <Card />
       <div style={{ height: '90vh', padding: '50px 100px' }}>
         ContextSolution
         <GrandFather property={property} />
