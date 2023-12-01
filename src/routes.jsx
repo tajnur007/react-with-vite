@@ -7,6 +7,7 @@ import Memo from './pages/Memo.jsx';
 import Reducer from './pages/Reducer.jsx';
 import Todos from "./pages/Todos.jsx";
 import DynamicTodo from "./pages/DynamicTodo.jsx";
+import Counter from "./pages/Counter.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -71,5 +72,9 @@ export const router = createBrowserRouter([
   {
     path: "/female/sharee/:productId",
     element: <DynamicTodo />
+  },
+  {
+    path: "/counter",
+    element: <Counter />
   },
 ]);

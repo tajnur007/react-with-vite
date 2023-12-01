@@ -28,6 +28,7 @@ const Navbar = () => {
         <NavLink to='/context'><li>Context</li></NavLink>
         <NavLink to='/hook'><li>Hook</li></NavLink>
         <NavLink to='/todos'><li>Todos</li></NavLink>
+        <NavLink to='/counter'><li>Counter</li></NavLink>
       </ul>
       <LoginLogout
         isUserLoggedIn={isUserLoggedIn}
