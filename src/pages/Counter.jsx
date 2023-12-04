@@ -4,7 +4,8 @@ import Navbar from "../components/navbar/Navbar";
 import { CounterActions, decrement, increment, incrementByAmount } from "../store/slice/counterSlice";
 
 const Counter = () => {
-  const count = useSelector(state => state.counter.value);
+  const count = useSelector(store => store.counter.value);
+  const user = useSelector(store => store.userData.user);
   const dispatch = useDispatch();
 
 
@@ -23,6 +24,20 @@ const Counter = () => {
           <button onClick={() => dispatch(decrement())}>Decrement</button>
           <button onClick={() => dispatch(incrementByAmount(5))}>IncrementByValue</button>
         </div>
+
+        {user ? (
+          // True block 
+          <div>
+            <h3>User Info</h3>
+            <p>Name: {user.name}</p>
+            <p>Username: {user.username}</p>
+            <p>Email: {user.email}</p>
+            <p>Phone: {user.phone}</p>
+          </div>
+        ) : (
+          // Flase block 
+          <p>No user loggedin at this moment</p>
+        )}
       </div>
       <Footer />
     </div>

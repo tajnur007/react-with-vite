@@ -1,15 +1,31 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import LoginLogout from './LoginLogout';
 import './Navbar.css';
 import { ThemeContext } from '../../ThemeProvider';
 import { NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserInfo } from '../../services/authService';
+import { setUserInfo } from '../../store/slice/userSlice';
 
 const Navbar = () => {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const { theme, setTheme } = useContext(ThemeContext);
+  const user = useSelector(store => store.userData.user);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (user === null) {
+      setIsUserLoggedIn(false);
+    } else {
+      setIsUserLoggedIn(true);
+    }
+  }, [user])
+
 
   const handleLoginLogout = () => {
-    setIsUserLoggedIn(!isUserLoggedIn);
+    getUserInfo(4).then(data => {
+      dispatch(setUserInfo(data));
+    });
   };
 
   const changeTheme = () => {
