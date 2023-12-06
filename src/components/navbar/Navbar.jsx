@@ -8,9 +8,15 @@ import { getUserInfo } from '../../services/authService';
 import { setUserInfo } from '../../store/slice/userSlice';
 
 const Navbar = () => {
+  // const user = useSelector(store => store.userData.user);
+  const user = useSelector((store) => {
+    return store.userData.user;
+  });
+
+
+
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const { theme, setTheme } = useContext(ThemeContext);
-  const user = useSelector(store => store.userData.user);
   const dispatch = useDispatch();
 
   useEffect(() => {

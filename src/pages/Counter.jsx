@@ -2,6 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Footer from "../components/footer/Footer";
 import Navbar from "../components/navbar/Navbar";
 import { CounterActions, decrement, increment, incrementByAmount } from "../store/slice/counterSlice";
+import HigherOrderComponent from "../components/HigherOrderComponent";
+import AnotherComponent from "../components/AnotherComponent";
 
 const Counter = () => {
   const count = useSelector(store => store.counter.value);
@@ -39,6 +41,11 @@ const Counter = () => {
           <p>No user loggedin at this moment</p>
         )}
       </div>
+
+
+      <HigherOrderComponent
+        insideComponent={<AnotherComponent />}
+      />
       <Footer />
     </div>
   )
